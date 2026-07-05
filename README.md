@@ -30,16 +30,13 @@ Each ZIP is scored as its **percentile rank on 10-year home price appreciation m
 
 ## Running it
 
+The notebook is self-contained: the first cell installs every package it needs (`pandas`, `numpy`, `matplotlib`, `altair`, `geopandas`, `folium`, `contextily`, `shapely`), and the second cell automatically clones `HouseholdIncome.csv` and `FHSZSRA_23_3.gdb` from this repo if they aren't already sitting next to the notebook. This was verified by running the notebook from a directory containing nothing but the `.ipynb` file — 0 errors.
+
 ### In Google Colab
-1. Upload `LAFiresFinalProject.ipynb` to Colab (File → Upload notebook).
-2. Upload `HouseholdIncome.csv` and the `FHSZSRA_23_3.gdb` folder into the Colab session's files (drag-and-drop into the file browser pane works for the folder in Chrome), or mount Google Drive if you'd rather they persist across sessions.
-3. Run all cells — the first cell installs `geopandas`, `folium`, and `contextily`, which Colab doesn't include by default.
+Open directly via `colab.research.google.com/github/kalafejzo1/lafiresfinalproject/blob/main/LAFiresFinalProject.ipynb`, or upload just the `.ipynb` (File → Upload notebook) — no need to manually upload the data files, the notebook fetches them itself on first run.
 
 ### Locally (Jupyter / VS Code)
-```bash
-pip install pandas geopandas altair folium matplotlib contextily
-```
-Then open the notebook and run all cells from the top. `HouseholdIncome.csv` and `FHSZSRA_23_3.gdb` are read via relative paths, so keep them in the same folder as the notebook.
+Download or clone the whole repo (so `HouseholdIncome.csv` and `FHSZSRA_23_3.gdb` are present alongside the notebook — faster than the self-heal step re-cloning them), then open the notebook and run all cells from the top.
 
 Running the notebook regenerates the interactive maps (`.html`) and static charts (`.png`) as local output files — these aren't tracked in this repo, since they're fully reproducible from the notebook and its two input files.
 
