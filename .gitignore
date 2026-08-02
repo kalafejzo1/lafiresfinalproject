@@ -3,5 +3,6 @@ __pycache__/
 *.pyc
 *.html
 *.png
+!design_process/*.png
 ca_fire_perimeters.geojson
 .ipynb_checkpoints/
